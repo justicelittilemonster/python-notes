@@ -23,7 +23,7 @@ Objdll = ctypes.CDLL("dllpath")
 ## C基本类型和ctypes中实现的类型映射表
 
 |ctypes数据类型 | C数据类型|
-|---|:--:|---:|
+|----|-----|
 |c_char | char |
 |c_short   |   short| 
 |c_int     |   int |
