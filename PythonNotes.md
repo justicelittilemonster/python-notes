@@ -13,24 +13,25 @@ Objdll = ctypes.WinDLL("dllpath")
    ```
 ###    cdecl调用约定：也有两种加载方式 
 ```python
-  Objdll = ctypes.cdll.LoadLibrary("dllpath")
-    Objdll = ctypes.CDLL("dllpath")
+Objdll = ctypes.cdll.LoadLibrary("dllpath")
+Objdll = ctypes.CDLL("dllpath")
 ```
 ####    其实windll和cdll分别是WinDLL类和CDll类的对象。
 
 ### 在加载dll的时候会返回一个DLL对象，利用该对象就可以调用dll中的方法
 ---
 ## C基本类型和ctypes中实现的类型映射表
-ctypes数据类型 | C数据类型
----|:--:|---:
-c_char | char 
-c_short   |   short 
-c_int     |   int 
-c_long    |   long 
-c_ulong   |   unsign long 
-c_float   |   float 
-c_double  |   double 
-c_void_p  |   void 
+
+|ctypes数据类型 | C数据类型|
+|---|:--:|---:|
+|c_char | char |
+|c_short   |   short| 
+|c_int     |   int |
+|c_long    |   long |
+|c_ulong   |   unsign long| 
+|c_float   |   float |
+|c_double  |   double| 
+|c_void_p  |   void |
 ### 对应的指针类型是在后面加上"_p"，如int*是c_int_p等等。 
 ---
 ## DLL中的函数返回一个指针
