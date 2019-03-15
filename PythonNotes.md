@@ -23,8 +23,8 @@ Objdll = ctypes.CDLL("dllpath")
 ## C基本类型和ctypes中实现的类型映射表
 
 |ctypes数据类型 | C数据类型|
-|----|-----|
-|c_char | char |
+|----|:-----|
+|c_char |   char |
 |c_short   |   short| 
 |c_int     |   int |
 |c_long    |   long |
@@ -32,7 +32,7 @@ Objdll = ctypes.CDLL("dllpath")
 |c_float   |   float |
 |c_double  |   double| 
 |c_void_p  |   void |
-### 对应的指针类型是在后面加上"_p"，如int*是c_int_p等等。 
+
 ---
 ## DLL中的函数返回一个指针
 ### 返回的都是地址，把他们转换相应的python类型，再通过value属性访问
@@ -91,3 +91,10 @@ print o.kws[1].words;
  
 print o.len
 ```
+### ctypes exports the byref() function which is used to pass parameters by reference.
+### 例如 
+`print dll.Add(byref(c_int(50)),byref(c_int(60)))`
+### pointer()  返回参数的指针  参数的类型应在之前的代码定义
+` print dll.Add(pointer(a),pointer(b)) `
+
+---
